@@ -1,408 +1,239 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>main</title>
-  <style>
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziqiao Xi - Resume</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --spacing: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: var(--spacing);
+            padding-bottom: var(--spacing);
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .item-subtitle {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        .item-date {
+            color: #666;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .bullet-points li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .bullet-points li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="center">
-<p><span><span class="smallcaps">Ziqiao Xi</span></span><br />
- 717-875-7551 <a href="xiziqiao@umich.edu"> <u>zixi@ucsd.edu</u></a>  
-<a
-href="https://www.linkedin.com/in/ziqiao-x-112551193/"> <u>LinkedIn</u></a>
-  <a href="https://xiziqiao.github.io/"> <u>Github</u></a></p>
-</div>
-<h1 id="education">Education</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>University of California, San
-Diego</strong></td>
-<td style="text-align: right;"><strong>2024 - 2026</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>M.S. in Computer Science
-(C.S.75)</em></td>
-<td style="text-align: right;"><em></em></td>
-</tr>
-</tbody>
-</table></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>University of Michigan Ann
-Arbor</strong></td>
-<td style="text-align: right;"><strong>2021 - 2024</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>B.S in Computer Science &amp;
-Mathematics</em></td>
-<td style="text-align: right;"><em>3.8/4 GPA</em></td>
-</tr>
-</tbody>
-</table></li>
-</ul>
-<h1 id="work-experience">Work Experience</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Quantum Compliance</strong></td>
-<td style="text-align: right;"><strong>May 2024 – August
-2024</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Full Stack Developer Intern</em></td>
-<td style="text-align: right;"><em>Ann Arbor, MI</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Developed an end-to-end solution for parsing and
-extracting data from chemical safety data sheets using
-<strong>GPU</strong>-accelerated <strong>OCR</strong> (Tesseract) and
-clustering techniques, reducing processing time from 15 to 3 minutes per
-PDF. </span> </span></p></li>
-<li><p><span> <span>Deployed locally hosted LLMs (<strong>Mistral,
-Llama3</strong> via Ollama) to ensure data privacy, orchestrated queries
-using LangChain, and integrated selective <strong>OpenAI API</strong>
-usage for enhanced accuracy. </span> </span></p></li>
-<li><p><span> <span>Implemented and optimized <strong>RabbitMQ</strong>
-message queues to distribute PDF parsing tasks across GPU-backed
-servers, incorporating retry logic and <strong>dead letter
-queues</strong> to handle failures and analyze problematic messages for
-reliability. </span> </span></p></li>
-<li><p><span> <span>Implemented an Excel export feature in a
-<strong>Spring Boot</strong> and <strong>Angular</strong> application,
-integrating a seamless UI button and leveraging Apache POI to generate
-well-structured spreadsheets for tracking workers’ certificate statuses.
-</span> </span></p></li>
-<li><p><span> <span>Optimized legacy <strong>SQL</strong> queries by
-resolving the <strong>N+1 problem</strong>, consolidating multiple
-inefficient loops into a single query strategy, reducing data retrieval
-and file generation time from 1 minute to 5 seconds </span>
-</span></p></li>
-<li><p><span> <span>Deployed the service on GPU-backed servers using
-<strong>Docker</strong> containers and designed <strong>Nginx load
-balancers</strong> to ensure efficient distribution and scalability.
-</span> </span></p></li>
-<li><p><span> <span>Designed and implemented a
-<strong>Retrieval-Augmented Generation (RAG)</strong> chatbot using
-<strong>LangChain</strong>, incorporating a sliding window technique to
-deliver real-time, context-aware answers to chemical regulation queries.
-</span> </span></p></li>
-<li><p><span> <span>Scraped chemical regulation websites using
-<strong>Python</strong>, preprocessed data into multilingual vector
-spaces with <strong>Hugging Face</strong>’s GPT-2 tokenizer, and
-employed <strong>Faiss</strong> for vector storage, similarity search,
-and automated index updates. </span> </span></p></li>
-</ul></li>
-</ul>
-<h1 id="project">Project</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Meditation App</strong></td>
-<td style="text-align: right;"><strong>www.ziqiaoxi.com</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Independent Full Stack
-Developer</em></td>
-<td style="text-align: right;"><em></em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Developed a scalable meditation-sharing platform
-where users can record, post, and share meditation experiences with
-text, images, and location data using <strong>Node.js</strong> and
-<strong>React</strong>. </span> </span></p></li>
-<li><p><span> <span>Designed an optimized <strong>MySQL</strong>
-database with ER diagrams for user posts, comments, and location data,
-implementing <strong>indexing</strong> and query optimization techniques
-to improve retrieval speed. </span> </span></p></li>
-<li><p><span> <span>Optimized MySQL query performance by implementing
-<strong>Redis</strong> as an in-memory cache with LRU eviction policies,
-fine-tuned key design, and expiration strategies to efficiently cache
-user data and session tokens for faster access. </span> </span></p></li>
-<li><p><span> <span>Built scalable <strong>RESTful APIs</strong> using
-<strong>Node.js</strong> and <strong>Express.js</strong> to handle CRUD
-operations on MySQL, with <strong>pagination</strong> implemented for
-efficient retrieval of large datasets, such as user posts and comments.
-</span> </span></p></li>
-<li><p><span> <span>Integrated <strong>RabbitMQ</strong> as a message
-broker for tasks like asynchronous image uploads and processing,
-enabling efficient handling of large image files while decoupling
-services for better maintainability and scalability. </span>
-</span></p></li>
-<li><p><span> <span>Designed <strong>Elasticsearch</strong> indexes
-using an inverted index structure for efficient text and location-based
-search, enabling fast and accurate retrieval of user posts based on
-keywords or proximity to specific locations </span> </span></p></li>
-<li><p><span> <span>Configured <strong>Prometheus</strong> for real-time
-monitoring of system metrics, setting up <strong>Slack-based</strong>
-anomaly alerting. </span> </span></p></li>
-<li><p><span> <span>Deployed the app on <strong>Dockerized EC2</strong>
-instances with <strong>Kubernetes</strong>; implemented <strong>GitHub
-Actions</strong> and <strong>Argo CD</strong> for CI/CD, automating unit
-and integration tests with <strong>Jest/Supertest</strong> and
-multi-architecture Docker build. </span> </span></p></li>
-</ul></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Operating Systems</strong></td>
-<td style="text-align: right;"><strong>January 2024 - May
-2024</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Course Project</em></td>
-<td style="text-align: right;"><em>Ann Arbor, MI</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Built a custom user-level thread library using
-<strong>C++</strong>, supporting context switching, thread creation, and
-FIFO-based scheduling with safe concurrency through interrupt management
-and global atomic guards. </span> </span></p></li>
-<li><p><span> <span>Developed a demand-paged <strong>virtual memory
-manager</strong> with swap/file-backed pages, clock-based page
-replacement, copy-on-write optimizations, and a robust state machine for
-efficient page lifecycle management. </span> </span></p></li>
-<li><p><span> <span>Designed a secure, <strong>multi-threaded</strong>
-network file server with password-based encryption, an upgradeable
-reader-writer lock scheme, and a non-hierarchical file system structure
-to ensure crash safety and file system consistency. </span>
-</span></p></li>
-</ul></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Disributed System</strong></td>
-<td style="text-align: right;"><strong>January 2024 - May
-2024</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Course Project</em></td>
-<td style="text-align: right;"><em>Ann Arbor, MI</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Designed and implemented a distributed
-<strong>MapReduce</strong> framework with a Manager and Workers
-communicating over <strong>TCP/UDP</strong>, featuring job queuing, task
-scheduling, and dynamic worker registration. </span> </span></p></li>
-<li><p><span> <span>Implemented a <strong>concurrency</strong> model
-using upgradeable reader-writer locks to synchronize threads, prevent
-data races, and manage job queues, worker states, and task assignments.
-</span> </span></p></li>
-<li><p><span> <span>Optimized performance with a
-<strong>streaming</strong> approach for mapper and reducer
-input/output,,and incorporating fault tolerance via UDP
-<strong>heartbeat</strong> monitoring to detect Worker failures and
-reassign tasks seamlessly. </span> </span></p></li>
-</ul></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Web Search Engine</strong></td>
-<td style="text-align: right;"><strong>January 2024 - May
-2024</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Course Project</em></td>
-<td style="text-align: right;"><em>Ann Arbor, MI</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Developed a web search engine using
-<strong>Flask</strong> with a multi-stage <strong>MapReduce</strong>
-pipeline, Index and Search servers, and a frontend interface for ranking
-and displaying query results using <strong>React</strong> </span>
-</span></p></li>
-<li><p><span> <span>Built an inverted index using a MapReduce pipeline
-to compute <strong>tf-idf</strong> scores, segmented indices by document
-ID, and integrated <strong>PageRank</strong> data to enhance document
-ranking with user-configurable weight adjustments.. </span>
-</span></p></li>
-<li><p><span> <span>Developed a <strong>RESTful API</strong> in the
-Index server to retrieve query results as JSON, optimized query
-processing by leveraging precomputed index segments stored in memory.
-</span> </span></p></li>
-<li><p><span> <span>Incorporated <strong>upgradeable reader-writer
-locks</strong> to ensure thread-safe operations in the Index and Search
-servers, enabling concurrent read operations and writes for in-memory
-updates and query result merging. </span> </span></p></li>
-</ul></li>
-</ul>
+    <header class="header">
+        <h1>ZIQIAO XI</h1>
+        <div class="contact-info">
+            <span>717-875-7551</span>
+            <a href="mailto:zixi@ucsd.edu">zixi@ucsd.edu</a>
+            <a href="https://www.linkedin.com/in/ziqiao-x-112551193/">LinkedIn</a>
+            <a href="https://xiziqiao.github.io/">Github</a>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <div class="item-header">
+                <span class="item-title">University of California, San Diego</span>
+                <span class="item-date">2024 - 2026</span>
+            </div>
+            <div class="item-subtitle">M.S. in Computer Science (C.S.75)</div>
+        </div>
+        <div class="education-item">
+            <div class="item-header">
+                <span class="item-title">University of Michigan Ann Arbor</span>
+                <span class="item-date">2021 - 2024</span>
+            </div>
+            <div class="item-subtitle">B.S in Computer Science & Mathematics</div>
+            <div>GPA: 3.8/4.0</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-item">
+            <div class="item-header">
+                <span class="item-title">Quantum Compliance</span>
+                <span class="item-date">May 2024 – August 2024</span>
+            </div>
+            <div class="item-subtitle">Full Stack Developer Intern - Ann Arbor, MI</div>
+            <ul class="bullet-points">
+                <li>Developed an end-to-end solution for parsing and extracting data from chemical safety data sheets using <strong>GPU</strong>-accelerated <strong>OCR</strong> (Tesseract) and clustering techniques, reducing processing time from 15 to 3 minutes per PDF.</li>
+                <li>Deployed locally hosted LLMs (<strong>Mistral, Llama3</strong> via Ollama) to ensure data privacy, orchestrated queries using LangChain, and integrated selective <strong>OpenAI API</strong> usage for enhanced accuracy.</li>
+                <li>Implemented and optimized <strong>RabbitMQ</strong> message queues to distribute PDF parsing tasks across GPU-backed servers, incorporating retry logic and <strong>dead letter queues</strong> to handle failures.</li>
+                <li>Implemented an Excel export feature in a <strong>Spring Boot</strong> and <strong>Angular</strong> application for tracking workers' certificate statuses.</li>
+                <li>Optimized legacy <strong>SQL</strong> queries by resolving the <strong>N+1 problem</strong>, reducing data retrieval time from 1 minute to 5 seconds.</li>
+                <li>Deployed the service using <strong>Docker</strong> containers and designed <strong>Nginx load balancers</strong> for efficient distribution.</li>
+                <li>Designed and implemented a <strong>RAG</strong> chatbot using <strong>LangChain</strong> for real-time chemical regulation queries.</li>
+                <li>Scraped chemical regulation websites and implemented multilingual vector spaces with <strong>Hugging Face</strong> and <strong>Faiss</strong>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Projects</h2>
+        <div class="project-item">
+            <div class="item-header">
+                <span class="item-title">Meditation App</span>
+                <a href="http://www.ziqiaoxi.com" class="item-date">www.ziqiaoxi.com</a>
+            </div>
+            <div class="item-subtitle">Independent Full Stack Developer</div>
+            <ul class="bullet-points">
+                <li>Developed a scalable meditation-sharing platform using <strong>Node.js</strong> and <strong>React</strong>.</li>
+                <li>Designed optimized <strong>MySQL</strong> database with ER diagrams and implemented <strong>indexing</strong>.</li>
+                <li>Implemented <strong>Redis</strong> caching with LRU eviction policies for improved performance.</li>
+                <li>Built <strong>RESTful APIs</strong> using <strong>Node.js</strong> and <strong>Express.js</strong> with <strong>pagination</strong>.</li>
+                <li>Integrated <strong>RabbitMQ</strong> for asynchronous image processing and <strong>Elasticsearch</strong> for efficient search.</li>
+                <li>Configured <strong>Prometheus</strong> monitoring with <strong>Slack-based</strong> alerting.</li>
+                <li>Deployed using <strong>Docker</strong>, <strong>Kubernetes</strong>, and implemented CI/CD with <strong>GitHub Actions</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span class="item-title">Operating Systems</span>
+                <span class="item-date">January 2024 - May 2024</span>
+            </div>
+            <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
+            <ul class="bullet-points">
+                <li>Built a custom user-level thread library in <strong>C++</strong> with context switching and FIFO scheduling.</li>
+                <li>Developed a demand-paged <strong>virtual memory manager</strong> with advanced features and optimizations.</li>
+                <li>Designed a secure, <strong>multi-threaded</strong> network file server with encryption and crash safety.</li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span class="item-title">Distributed System</span>
+                <span class="item-date">January 2024 - May 2024</span>
+            </div>
+            <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
+            <ul class="bullet-points">
+                <li>Implemented a distributed <strong>MapReduce</strong> framework with <strong>TCP/UDP</strong> communication.</li>
+                <li>Designed <strong>concurrency</strong> model using upgradeable reader-writer locks.</li>
+                <li>Optimized performance with <strong>streaming</strong> and implemented fault tolerance via <strong>heartbeat</strong> monitoring.</li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span class="item-title">Web Search Engine</span>
+                <span class="item-date">January 2024 - May 2024</span>
+            </div>
+            <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
+            <ul class="bullet-points">
+                <li>Built a search engine using <strong>Flask</strong> and <strong>React</strong> with <strong>MapReduce</strong> pipeline.</li>
+                <li>Implemented inverted index with <strong>tf-idf</strong> scores and <strong>PageRank</strong> integration.</li>
+                <li>Developed <strong>RESTful API</strong> with optimized query processing.</li>
+                <li>Implemented thread-safe operations using <strong>upgradeable reader-writer locks</strong>.</li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
