@@ -40,6 +40,7 @@
             color: var(--primary-color);
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
 
         .contact-info {
@@ -127,7 +128,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>ZIQIAO XI</h1>
+        <h1>Ziqiao Xi</h1>
         <div class="contact-info">
             <span>717-875-7551</span>
             <a href="mailto:zixi@ucsd.edu">zixi@ucsd.edu</a>
@@ -151,7 +152,7 @@
                 <span class="item-date">2021 - 2024</span>
             </div>
             <div class="item-subtitle">B.S in Computer Science & Mathematics</div>
-            <div>GPA: 3.8/4.0</div>
+            <div>3.8/4 GPA</div>
         </div>
     </section>
 
@@ -166,18 +167,18 @@
             <ul class="bullet-points">
                 <li>Developed an end-to-end solution for parsing and extracting data from chemical safety data sheets using <strong>GPU</strong>-accelerated <strong>OCR</strong> (Tesseract) and clustering techniques, reducing processing time from 15 to 3 minutes per PDF.</li>
                 <li>Deployed locally hosted LLMs (<strong>Mistral, Llama3</strong> via Ollama) to ensure data privacy, orchestrated queries using LangChain, and integrated selective <strong>OpenAI API</strong> usage for enhanced accuracy.</li>
-                <li>Implemented and optimized <strong>RabbitMQ</strong> message queues to distribute PDF parsing tasks across GPU-backed servers, incorporating retry logic and <strong>dead letter queues</strong> to handle failures.</li>
-                <li>Implemented an Excel export feature in a <strong>Spring Boot</strong> and <strong>Angular</strong> application for tracking workers' certificate statuses.</li>
-                <li>Optimized legacy <strong>SQL</strong> queries by resolving the <strong>N+1 problem</strong>, reducing data retrieval time from 1 minute to 5 seconds.</li>
-                <li>Deployed the service using <strong>Docker</strong> containers and designed <strong>Nginx load balancers</strong> for efficient distribution.</li>
-                <li>Designed and implemented a <strong>RAG</strong> chatbot using <strong>LangChain</strong> for real-time chemical regulation queries.</li>
-                <li>Scraped chemical regulation websites and implemented multilingual vector spaces with <strong>Hugging Face</strong> and <strong>Faiss</strong>.</li>
+                <li>Implemented and optimized <strong>RabbitMQ</strong> message queues to distribute PDF parsing tasks across GPU-backed servers, incorporating retry logic and <strong>dead letter queues</strong> to handle failures and analyze problematic messages for reliability.</li>
+                <li>Implemented an Excel export feature in a <strong>Spring Boot</strong> and <strong>Angular</strong> application, integrating a seamless UI button and leveraging Apache POI to generate well-structured spreadsheets for tracking workers' certificate statuses.</li>
+                <li>Optimized legacy <strong>SQL</strong> queries by resolving the <strong>N+1 problem</strong>, consolidating multiple inefficient loops into a single query strategy, reducing data retrieval and file generation time from 1 minute to 5 seconds</li>
+                <li>Deployed the service on GPU-backed servers using <strong>Docker</strong> containers and designed <strong>Nginx load balancers</strong> to ensure efficient distribution and scalability.</li>
+                <li>Designed and implemented a <strong>Retrieval-Augmented Generation (RAG)</strong> chatbot using <strong>LangChain</strong>, incorporating a sliding window technique to deliver real-time, context-aware answers to chemical regulation queries.</li>
+                <li>Scraped chemical regulation websites using <strong>Python</strong>, preprocessed data into multilingual vector spaces with <strong>Hugging Face</strong>'s GPT-2 tokenizer, and employed <strong>Faiss</strong> for vector storage, similarity search, and automated index updates.</li>
             </ul>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Project</h2>
         <div class="project-item">
             <div class="item-header">
                 <span class="item-title">Meditation App</span>
@@ -185,13 +186,14 @@
             </div>
             <div class="item-subtitle">Independent Full Stack Developer</div>
             <ul class="bullet-points">
-                <li>Developed a scalable meditation-sharing platform using <strong>Node.js</strong> and <strong>React</strong>.</li>
-                <li>Designed optimized <strong>MySQL</strong> database with ER diagrams and implemented <strong>indexing</strong>.</li>
-                <li>Implemented <strong>Redis</strong> caching with LRU eviction policies for improved performance.</li>
-                <li>Built <strong>RESTful APIs</strong> using <strong>Node.js</strong> and <strong>Express.js</strong> with <strong>pagination</strong>.</li>
-                <li>Integrated <strong>RabbitMQ</strong> for asynchronous image processing and <strong>Elasticsearch</strong> for efficient search.</li>
-                <li>Configured <strong>Prometheus</strong> monitoring with <strong>Slack-based</strong> alerting.</li>
-                <li>Deployed using <strong>Docker</strong>, <strong>Kubernetes</strong>, and implemented CI/CD with <strong>GitHub Actions</strong>.</li>
+                <li>Developed a scalable meditation-sharing platform where users can record, post, and share meditation experiences with text, images, and location data using <strong>Node.js</strong> and <strong>React</strong>.</li>
+                <li>Designed an optimized <strong>MySQL</strong> database with ER diagrams for user posts, comments, and location data, implementing <strong>indexing</strong> and query optimization techniques to improve retrieval speed.</li>
+                <li>Optimized MySQL query performance by implementing <strong>Redis</strong> as an in-memory cache with LRU eviction policies, fine-tuned key design, and expiration strategies to efficiently cache user data and session tokens for faster access.</li>
+                <li>Built scalable <strong>RESTful APIs</strong> using <strong>Node.js</strong> and <strong>Express.js</strong> to handle CRUD operations on MySQL, with <strong>pagination</strong> implemented for efficient retrieval of large datasets, such as user posts and comments.</li>
+                <li>Integrated <strong>RabbitMQ</strong> as a message broker for tasks like asynchronous image uploads and processing, enabling efficient handling of large image files while decoupling services for better maintainability and scalability.</li>
+                <li>Designed <strong>Elasticsearch</strong> indexes using an inverted index structure for efficient text and location-based search, enabling fast and accurate retrieval of user posts based on keywords or proximity to specific locations</li>
+                <li>Configured <strong>Prometheus</strong> for real-time monitoring of system metrics, setting up <strong>Slack-based</strong> anomaly alerting.</li>
+                <li>Deployed the app on <strong>Dockerized EC2</strong> instances with <strong>Kubernetes</strong>; implemented <strong>GitHub Actions</strong> and <strong>Argo CD</strong> for CI/CD, automating unit and integration tests with <strong>Jest/Supertest</strong> and multi-architecture Docker build.</li>
             </ul>
         </div>
 
@@ -202,22 +204,22 @@
             </div>
             <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
             <ul class="bullet-points">
-                <li>Built a custom user-level thread library in <strong>C++</strong> with context switching and FIFO scheduling.</li>
-                <li>Developed a demand-paged <strong>virtual memory manager</strong> with advanced features and optimizations.</li>
-                <li>Designed a secure, <strong>multi-threaded</strong> network file server with encryption and crash safety.</li>
+                <li>Built a custom user-level thread library using <strong>C++</strong>, supporting context switching, thread creation, and FIFO-based scheduling with safe concurrency through interrupt management and global atomic guards.</li>
+                <li>Developed a demand-paged <strong>virtual memory manager</strong> with swap/file-backed pages, clock-based page replacement, copy-on-write optimizations, and a robust state machine for efficient page lifecycle management.</li>
+                <li>Designed a secure, <strong>multi-threaded</strong> network file server with password-based encryption, an upgradeable reader-writer lock scheme, and a non-hierarchical file system structure to ensure crash safety and file system consistency.</li>
             </ul>
         </div>
 
         <div class="project-item">
             <div class="item-header">
-                <span class="item-title">Distributed System</span>
+                <span class="item-title">Disributed System</span>
                 <span class="item-date">January 2024 - May 2024</span>
             </div>
             <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
             <ul class="bullet-points">
-                <li>Implemented a distributed <strong>MapReduce</strong> framework with <strong>TCP/UDP</strong> communication.</li>
-                <li>Designed <strong>concurrency</strong> model using upgradeable reader-writer locks.</li>
-                <li>Optimized performance with <strong>streaming</strong> and implemented fault tolerance via <strong>heartbeat</strong> monitoring.</li>
+                <li>Designed and implemented a distributed <strong>MapReduce</strong> framework with a Manager and Workers communicating over <strong>TCP/UDP</strong>, featuring job queuing, task scheduling, and dynamic worker registration.</li>
+                <li>Implemented a <strong>concurrency</strong> model using upgradeable reader-writer locks to synchronize threads, prevent data races, and manage job queues, worker states, and task assignments.</li>
+                <li>Optimized performance with a <strong>streaming</strong> approach for mapper and reducer input/output,,and incorporating fault tolerance via UDP <strong>heartbeat</strong> monitoring to detect Worker failures and reassign tasks seamlessly.</li>
             </ul>
         </div>
 
@@ -228,10 +230,10 @@
             </div>
             <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
             <ul class="bullet-points">
-                <li>Built a search engine using <strong>Flask</strong> and <strong>React</strong> with <strong>MapReduce</strong> pipeline.</li>
-                <li>Implemented inverted index with <strong>tf-idf</strong> scores and <strong>PageRank</strong> integration.</li>
-                <li>Developed <strong>RESTful API</strong> with optimized query processing.</li>
-                <li>Implemented thread-safe operations using <strong>upgradeable reader-writer locks</strong>.</li>
+                <li>Developed a web search engine using <strong>Flask</strong> with a multi-stage <strong>MapReduce</strong> pipeline, Index and Search servers, and a frontend interface for ranking and displaying query results using <strong>React</strong></li>
+                <li>Built an inverted index using a MapReduce pipeline to compute <strong>tf-idf</strong> scores, segmented indices by document ID, and integrated <strong>PageRank</strong> data to enhance document ranking with user-configurable weight adjustments.</li>
+                <li>Developed a <strong>RESTful API</strong> in the Index server to retrieve query results as JSON, optimized query processing by leveraging precomputed index segments stored in memory.</li>
+                <li>Incorporated <strong>upgradeable reader-writer locks</strong> to ensure thread-safe operations in the Index and Search servers, enabling concurrent read operations and writes for in-memory updates and query result merging.</li>
             </ul>
         </div>
     </section>
