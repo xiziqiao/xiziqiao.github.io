@@ -19,11 +19,6 @@
     .page { width: min(860px, calc(100% - 48px)); margin: 0 auto; }
     .skip { position: absolute; left: -9999px; top: 12px; background: #fff; padding: 8px 12px; }
     .skip:focus { left: 12px; }
-    .topbar { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
-    .topbar .name { color: var(--ink); font-weight: 700; text-decoration: none; }
-    .topbar nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: .91rem; }
-    .topbar nav a { color: var(--muted); text-decoration: none; }
-    .topbar nav a:hover { color: var(--link); text-decoration: underline; }
     .hero { display: grid; grid-template-columns: minmax(0, 1fr) 205px; gap: 52px; align-items: start; padding: 58px 0 46px; }
     h1 { margin: 0 0 2px; font-size: clamp(2.4rem, 5vw, 3rem); font-weight: 650; line-height: 1.15; letter-spacing: -.045em; }
     .intro p { margin: 0 0 12px; }
@@ -42,7 +37,6 @@
     footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
     @media (max-width: 620px) {
       .page { width: min(100% - 36px, 860px); }
-      .topbar { align-items: flex-start; flex-direction: column; gap: 7px; padding: 17px 0; }
       .hero { grid-template-columns: 1fr; gap: 22px; padding: 36px 0 34px; }
       .portrait { grid-row: 1; width: 160px; height: 160px; }
       section { margin-bottom: 35px; }
@@ -54,10 +48,6 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <div class="page">
-    <header class="topbar">
-      <a class="name" href="#top">Ziqiao Xi</a>
-      <nav aria-label="Page navigation"><a href="#research">Research</a><a href="#engineering">Engineering</a><a href="#about">About</a></nav>
-    </header>
     <main id="main">
       <div class="hero" id="top">
         <div class="intro">
