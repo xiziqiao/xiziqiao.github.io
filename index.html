@@ -1,241 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziqiao Xi - Resume</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-            --spacing: 1.5rem;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: white;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: var(--spacing);
-            padding-bottom: var(--spacing);
-            border-bottom: 2px solid var(--light-gray);
-        }
-
-        .header h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-info a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-color);
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light-gray);
-        }
-
-        .education-item, .experience-item, .project-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
-
-        .item-title {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .item-subtitle {
-            color: var(--secondary-color);
-            font-style: italic;
-        }
-
-        .item-date {
-            color: #666;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .bullet-points li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-
-        .bullet-points li::before {
-            content: "•";
-            color: var(--secondary-color);
-            position: absolute;
-            left: 0;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-
-            .item-header {
-                flex-direction: column;
-                gap: 0.25rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Ziqiao Xi is a research scientist working on embodied world models, agent environments, and efficient ML systems. Explore selected research and engineering work.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ziqiao Xi — Research & Engineering">
+  <meta property="og:description" content="Research in embodied world models, agent environments, and efficient ML systems.">
+  <meta property="og:url" content="https://xiziqiao.github.io/">
+  <title>Ziqiao Xi — Research & Engineering</title>
+  <style>
+    :root {
+      --paper: #f8f7f3;
+      --surface: #fffefa;
+      --ink: #172f35;
+      --subtle: #526a70;
+      --line: #d9e2df;
+      --accent: #0a776f;
+      --accent-soft: #e5f2ee;
+      --warm: #d99555;
+      --shadow: 0 18px 50px rgba(17, 53, 54, .08);
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #101d20;
+        --surface: #17282b;
+        --ink: #edf6f2;
+        --subtle: #afc5c1;
+        --line: #344a4b;
+        --accent: #7ad8bd;
+        --accent-soft: #203c3b;
+        --warm: #e0a96a;
+        --shadow: 0 18px 50px rgba(0, 0, 0, .18);
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    .skip { position: absolute; left: -9999px; top: 1rem; padding: .5rem .8rem; background: var(--surface); z-index: 20; }
+    .skip:focus { left: 1rem; }
+    .shell { width: min(1140px, calc(100% - 3rem)); margin-inline: auto; }
+    .site-header { border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { display: inline-flex; align-items: center; gap: .72rem; text-decoration: none; font-weight: 750; letter-spacing: -.03em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; background: var(--ink); color: var(--paper); font-size: .84rem; letter-spacing: -.07em; }
+    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem 1.55rem; }
+    .nav-links a { color: var(--subtle); text-decoration: none; font-size: .91rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .nav-contact { color: var(--accent); }
+    main { overflow: hidden; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .7fr); align-items: center; gap: 5rem; padding-block: clamp(4.2rem, 8vw, 8rem) 5.6rem; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .58rem; color: var(--accent); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: currentColor; }
+    h1 { margin: 1.1rem 0 1.1rem; max-width: 780px; font-size: clamp(3.35rem, 6.3vw, 6.5rem); line-height: 1.02; letter-spacing: -.075em; font-weight: 760; }
+    h1 span { color: var(--accent); }
+    .hero-lead { max-width: 660px; margin: 0; color: var(--ink); font-size: clamp(1.16rem, 1.65vw, 1.38rem); line-height: 1.55; }
+    .hero-detail { max-width: 635px; margin: 1.25rem 0 0; color: var(--subtle); font-size: 1.02rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.25rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .62rem 1.05rem; border: 1px solid var(--ink); border-radius: 7px; background: var(--ink); color: var(--paper); font-size: .9rem; font-weight: 700; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .button:hover { color: var(--paper); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .text-link { color: var(--accent); font-size: .91rem; font-weight: 700; text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    .hero-aside { position: relative; padding: 2rem 1.8rem; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+    .hero-aside::before { content: ""; position: absolute; width: 120px; height: 120px; right: -35px; top: -39px; border: 1px solid var(--line); border-radius: 50%; z-index: -1; }
+    .aside-label { color: var(--subtle); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+    .aside-title { margin: .5rem 0 1.2rem; font-size: 1.55rem; line-height: 1.25; letter-spacing: -.04em; font-weight: 700; }
+    .focus-list { display: grid; gap: .9rem; margin: 0; padding: 0; list-style: none; }
+    .focus-list li { display: grid; grid-template-columns: 1.5rem 1fr; gap: .5rem; align-items: start; color: var(--subtle); font-size: .94rem; }
+    .focus-list strong { color: var(--accent); font-size: .78rem; padding-top: .16rem; }
+    .section { padding-block: 4.6rem; border-top: 1px solid var(--line); scroll-margin-top: 25px; }
+    .section-top { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2.2rem; }
+    .section-kicker { color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin: .35rem 0 0; font-size: clamp(2rem, 3.5vw, 3.1rem); line-height: 1.15; letter-spacing: -.055em; }
+    .section-intro { max-width: 500px; margin: 0; color: var(--subtle); }
+    .featured { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+    .feature { display: flex; flex-direction: column; min-height: 315px; padding: 1.7rem; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .feature:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--accent); }
+    .feature.large { grid-column: span 7; background: linear-gradient(145deg, var(--accent-soft), var(--surface) 62%); }
+    .feature.medium { grid-column: span 5; }
+    .feature.half { grid-column: span 6; min-height: 285px; }
+    .feature-meta { display: flex; justify-content: space-between; gap: 1rem; align-items: start; color: var(--accent); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; }
+    .feature-no { color: var(--subtle); }
+    h3 { margin: 1.6rem 0 .65rem; font-size: clamp(1.45rem, 2vw, 1.9rem); line-height: 1.2; letter-spacing: -.045em; }
+    .feature p { max-width: 610px; margin: 0; color: var(--subtle); font-size: .96rem; }
+    .feature-links { display: flex; flex-wrap: wrap; gap: .55rem 1.15rem; margin-top: auto; padding-top: 1.6rem; }
+    .feature-links a { color: var(--accent); font-size: .88rem; font-weight: 750; text-decoration: none; }
+    .feature-links a:hover { text-decoration: underline; }
+    .feature-links a::after { content: " ↗"; }
+    .split { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 6vw, 7rem); }
+    .about-copy p { margin: 0 0 1.15rem; font-size: 1.04rem; }
+    .about-copy p + p { color: var(--subtle); }
+    .facts { display: grid; gap: 1.3rem; align-content: start; }
+    .fact { padding-bottom: 1.15rem; border-bottom: 1px solid var(--line); }
+    .fact-label { display: block; margin-bottom: .25rem; color: var(--accent); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    .fact-value { display: block; font-size: .95rem; }
+    .paper-list { display: grid; }
+    .paper { display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; padding: 1.55rem 0; border-top: 1px solid var(--line); }
+    .paper:last-child { border-bottom: 1px solid var(--line); }
+    .paper-year { color: var(--accent); font-size: .78rem; font-weight: 800; padding-top: .2rem; }
+    .paper h3 { margin: 0 0 .35rem; font-size: 1.08rem; letter-spacing: -.02em; line-height: 1.4; }
+    .paper p { margin: 0; color: var(--subtle); font-size: .9rem; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: .35rem 1rem; margin-top: .55rem; }
+    .paper-links a { color: var(--accent); font-size: .86rem; font-weight: 700; text-decoration: none; }
+    .paper-links a:hover { text-decoration: underline; }
+    .timeline { display: grid; gap: 1.45rem; }
+    .timeline-item { display: grid; grid-template-columns: 190px 1fr; gap: 1.5rem; padding-bottom: 1.45rem; border-bottom: 1px solid var(--line); }
+    .timeline-date { color: var(--subtle); font-size: .86rem; }
+    .timeline-item h3 { margin: 0; font-size: 1.11rem; letter-spacing: -.02em; }
+    .timeline-role { margin: .2rem 0 .5rem; color: var(--accent); font-size: .9rem; font-weight: 700; }
+    .timeline-item p:last-child { max-width: 680px; margin: 0; color: var(--subtle); font-size: .92rem; }
+    .contact { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 2.5rem; border-radius: 16px; background: var(--ink); color: var(--paper); }
+    .contact h2 { margin: 0 0 .45rem; font-size: clamp(1.9rem, 3vw, 2.7rem); }
+    .contact p { margin: 0; opacity: .8; }
+    .contact .button { background: var(--paper); border-color: var(--paper); color: var(--ink); white-space: nowrap; }
+    .contact .button:hover { color: var(--ink); }
+    footer { display: flex; justify-content: space-between; gap: 1rem; padding-block: 2.2rem; color: var(--subtle); font-size: .85rem; }
+    footer a { text-decoration: none; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-block: 4rem; }
+      .hero-aside { max-width: 560px; }
+      .section-top { display: block; }
+      .section-intro { margin-top: .7rem; }
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 650px) {
+      .shell { width: min(100% - 2rem, 1140px); }
+      .nav { align-items: start; flex-direction: column; justify-content: center; gap: .7rem; padding-block: 1rem; }
+      .nav-links { gap: .4rem 1rem; }
+      h1 { font-size: clamp(3.25rem, 15vw, 5rem); }
+      .hero { padding-block: 3.3rem 3.8rem; }
+      .section { padding-block: 3.4rem; }
+      .feature.large, .feature.medium, .feature.half { grid-column: span 12; min-height: 270px; }
+      .feature { padding: 1.45rem; }
+      .paper { grid-template-columns: 1fr; gap: .35rem; }
+      .timeline-item { grid-template-columns: 1fr; gap: .35rem; }
+      .contact { align-items: start; flex-direction: column; padding: 1.8rem; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button, .feature { transition: none; }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Ziqiao Xi</h1>
-        <div class="contact-info">
-            <span>717-875-7551</span>
-            <a href="mailto:zixi@ucsd.edu">zixi@ucsd.edu</a>
-            <a href="https://www.linkedin.com/in/ziqiao-x-112551193/">LinkedIn</a>
-            <a href="https://xiziqiao.github.io/">Github</a>
-        </div>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">ZX</span><span>Ziqiao Xi</span></a>
+      <div class="nav-links">
+        <a href="#work">Selected work</a>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a class="nav-contact" href="mailto:zixi@ucsd.edu">Contact ↗</a>
+      </div>
+    </nav>
+  </header>
 
-    <section>
-        <h2 class="section-title">Education</h2>
-        <div class="education-item">
-            <div class="item-header">
-                <span class="item-title">University of California, San Diego</span>
-                <span class="item-date">2024 - 2026</span>
-            </div>
-            <div class="item-subtitle">M.S. in Computer Science (C.S.75)</div>
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Research scientist · Aether AI</span>
+        <h1 id="hero-title">Building systems that help AI <span>understand and act.</span></h1>
+        <p class="hero-lead">I’m Ziqiao Xi. I work at the intersection of embodied world models, agent environments, and efficient machine learning systems.</p>
+        <p class="hero-detail">My research connects model behavior with the infrastructure needed to train, evaluate, and deploy it—from realistic computer-use environments to action-aware video models and fast inference on Apple Silicon.</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">Explore selected work <span aria-hidden="true">&nbsp;↘</span></a>
+          <a class="text-link" href="https://www.alphaxiv.org/@ziqiao-xi">Research profile ↗</a>
+          <a class="text-link" href="https://github.com/Ziqiao-git">GitHub ↗</a>
         </div>
-        <div class="education-item">
-            <div class="item-header">
-                <span class="item-title">University of Michigan Ann Arbor</span>
-                <span class="item-date">2021 - 2024</span>
-            </div>
-            <div class="item-subtitle">B.S in Computer Science & Mathematics</div>
-            <div>3.8/4 GPA</div>
-        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Research focus">
+        <span class="aside-label">Current focus</span>
+        <p class="aside-title">From simulated worlds to useful agents.</p>
+        <ol class="focus-list">
+          <li><strong>01</strong><span>Embodied world models that represent actions and physical change</span></li>
+          <li><strong>02</strong><span>Scalable environments for training and evaluating agents</span></li>
+          <li><strong>03</strong><span>Efficient inference across practical hardware</span></li>
+        </ol>
+      </aside>
     </section>
 
-    <section>
-        <h2 class="section-title">Work Experience</h2>
-        <div class="experience-item">
-            <div class="item-header">
-                <span class="item-title">Quantum Compliance</span>
-                <span class="item-date">May 2024 – August 2024</span>
-            </div>
-            <div class="item-subtitle">Full Stack Developer Intern - Ann Arbor, MI</div>
-            <ul class="bullet-points">
-                <li>Developed an end-to-end solution for parsing and extracting data from chemical safety data sheets using <strong>GPU</strong>-accelerated <strong>OCR</strong> (Tesseract) and clustering techniques, reducing processing time from 15 to 3 minutes per PDF.</li>
-                <li>Deployed locally hosted LLMs (<strong>Mistral, Llama3</strong> via Ollama) to ensure data privacy, orchestrated queries using LangChain, and integrated selective <strong>OpenAI API</strong> usage for enhanced accuracy.</li>
-                <li>Implemented and optimized <strong>RabbitMQ</strong> message queues to distribute PDF parsing tasks across GPU-backed servers, incorporating retry logic and <strong>dead letter queues</strong> to handle failures and analyze problematic messages for reliability.</li>
-                <li>Implemented an Excel export feature in a <strong>Spring Boot</strong> and <strong>Angular</strong> application, integrating a seamless UI button and leveraging Apache POI to generate well-structured spreadsheets for tracking workers' certificate statuses.</li>
-                <li>Optimized legacy <strong>SQL</strong> queries by resolving the <strong>N+1 problem</strong>, consolidating multiple inefficient loops into a single query strategy, reducing data retrieval and file generation time from 1 minute to 5 seconds</li>
-                <li>Deployed the service on GPU-backed servers using <strong>Docker</strong> containers and designed <strong>Nginx load balancers</strong> to ensure efficient distribution and scalability.</li>
-                <li>Designed and implemented a <strong>Retrieval-Augmented Generation (RAG)</strong> chatbot using <strong>LangChain</strong>, incorporating a sliding window technique to deliver real-time, context-aware answers to chemical regulation queries.</li>
-                <li>Scraped chemical regulation websites using <strong>Python</strong>, preprocessed data into multilingual vector spaces with <strong>Hugging Face</strong>'s GPT-2 tokenizer, and employed <strong>Faiss</strong> for vector storage, similarity search, and automated index updates.</li>
-            </ul>
-        </div>
+    <section class="section shell" id="work" aria-labelledby="work-title">
+      <div class="section-top">
+        <div><span class="section-kicker">Portfolio / 01</span><h2 id="work-title">Selected work</h2></div>
+        <p class="section-intro">Research and engineering projects spanning digital agents, embodied intelligence, and ML systems.</p>
+      </div>
+      <div class="featured">
+        <article class="feature large">
+          <div class="feature-meta"><span>Agent environments · ACL 2026</span><span class="feature-no">01</span></div>
+          <h3>C-World</h3>
+          <p>Co-led an environment creation system for computer-use agents. It unifies 5,571 tools across 204 applications and supports both live execution and synthesized environments for scalable evaluation and training.</p>
+          <div class="feature-links">
+            <a href="https://aclanthology.org/2026.acl-long.2001/">Paper</a>
+            <a href="https://ziqiao-git.github.io/C-World/">Project</a>
+            <a href="https://github.com/Ziqiao-git/C-World">Code</a>
+          </div>
+        </article>
+        <article class="feature medium">
+          <div class="feature-meta"><span>Embodied AI · 2026</span><span class="feature-no">02</span></div>
+          <h3>CD-LAM</h3>
+          <p>Collaborated on a causally debiased latent action model that helps action-conditioned world models follow embodied motion instead of relying on visual shortcuts.</p>
+          <div class="feature-links">
+            <a href="https://arxiv.org/abs/2607.09185">Paper</a>
+            <a href="https://yufanwei.github.io/CD-LAM-project-page/">Project</a>
+          </div>
+        </article>
+        <article class="feature half">
+          <div class="feature-meta"><span>Embodied AI · 2026</span><span class="feature-no">03</span></div>
+          <h3>CausalWM</h3>
+          <p>Contributed to a world model that predicts optical flow and 3D pointmaps before future video, making intermediate physical structure part of the prediction process.</p>
+          <div class="feature-links">
+            <a href="https://aetherlabsai.github.io/CausalWM/">Project</a>
+            <a href="https://aetherlabs.ai/articles/causalwm-causal-chain-of-thought-reasoning-for-embodied-world-model">Research note</a>
+          </div>
+        </article>
+        <article class="feature half">
+          <div class="feature-meta"><span>ML systems · Apple Silicon</span><span class="feature-no">04</span></div>
+          <h3>Efficient inference</h3>
+          <p>Explored diffusion-based speculative decoding and quantized inference with MLX and Metal, including work on DFlash verification and ParoQuant kernels for Apple Silicon.</p>
+          <div class="feature-links">
+            <a href="https://github.com/z-lab/dflash/pulls?q=is%3Apr+author%3AZiqiao-git">DFlash contributions</a>
+            <a href="https://github.com/z-lab/paroquant">ParoQuant</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section>
-        <h2 class="section-title">Project</h2>
-        <div class="project-item">
-            <div class="item-header">
-                <span class="item-title">Meditation App</span>
-                <a href="http://www.ziqiaoxi.com" class="item-date">www.ziqiaoxi.com</a>
-            </div>
-            <div class="item-subtitle">Independent Full Stack Developer</div>
-            <ul class="bullet-points">
-                <li>Developed a scalable meditation-sharing platform where users can record, post, and share meditation experiences with text, images, and location data using <strong>Node.js</strong> and <strong>React</strong>.</li>
-                <li>Designed an optimized <strong>MySQL</strong> database with ER diagrams for user posts, comments, and location data, implementing <strong>indexing</strong> and query optimization techniques to improve retrieval speed.</li>
-                <li>Optimized MySQL query performance by implementing <strong>Redis</strong> as an in-memory cache with LRU eviction policies, fine-tuned key design, and expiration strategies to efficiently cache user data and session tokens for faster access.</li>
-                <li>Built scalable <strong>RESTful APIs</strong> using <strong>Node.js</strong> and <strong>Express.js</strong> to handle CRUD operations on MySQL, with <strong>pagination</strong> implemented for efficient retrieval of large datasets, such as user posts and comments.</li>
-                <li>Integrated <strong>RabbitMQ</strong> as a message broker for tasks like asynchronous image uploads and processing, enabling efficient handling of large image files while decoupling services for better maintainability and scalability.</li>
-                <li>Designed <strong>Elasticsearch</strong> indexes using an inverted index structure for efficient text and location-based search, enabling fast and accurate retrieval of user posts based on keywords or proximity to specific locations</li>
-                <li>Configured <strong>Prometheus</strong> for real-time monitoring of system metrics, setting up <strong>Slack-based</strong> anomaly alerting.</li>
-                <li>Deployed the app on <strong>Dockerized EC2</strong> instances with <strong>Kubernetes</strong>; implemented <strong>GitHub Actions</strong> and <strong>Argo CD</strong> for CI/CD, automating unit and integration tests with <strong>Jest/Supertest</strong> and multi-architecture Docker build.</li>
-            </ul>
+    <section class="section shell" id="about" aria-labelledby="about-title">
+      <div class="section-top"><div><span class="section-kicker">About / 02</span><h2 id="about-title">A little more about me</h2></div></div>
+      <div class="split">
+        <div class="about-copy">
+          <p>I am a research scientist at Aether AI with an M.S. in Computer Science from UC San Diego. I enjoy problems that require both a clear research idea and the systems work to make that idea testable at scale.</p>
+          <p>My recent work studies how agents learn and act in complex environments. On the digital side, I build environments and tools for evaluating computer-use agents. On the embodied side, I study world models that can represent actions, geometry, and the consequences of change. Earlier work in ML systems and full-stack engineering still shapes how I approach reliability and performance.</p>
         </div>
-
-        <div class="project-item">
-            <div class="item-header">
-                <span class="item-title">Operating Systems</span>
-                <span class="item-date">January 2024 - May 2024</span>
-            </div>
-            <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
-            <ul class="bullet-points">
-                <li>Built a custom user-level thread library using <strong>C++</strong>, supporting context switching, thread creation, and FIFO-based scheduling with safe concurrency through interrupt management and global atomic guards.</li>
-                <li>Developed a demand-paged <strong>virtual memory manager</strong> with swap/file-backed pages, clock-based page replacement, copy-on-write optimizations, and a robust state machine for efficient page lifecycle management.</li>
-                <li>Designed a secure, <strong>multi-threaded</strong> network file server with password-based encryption, an upgradeable reader-writer lock scheme, and a non-hierarchical file system structure to ensure crash safety and file system consistency.</li>
-            </ul>
+        <div class="facts">
+          <div class="fact"><span class="fact-label">Now</span><span class="fact-value">Research Scientist · Aether AI</span></div>
+          <div class="fact"><span class="fact-label">Education</span><span class="fact-value">M.S. Computer Science · UC San Diego<br>B.S. Computer Science & Mathematics · University of Michigan</span></div>
+          <div class="fact"><span class="fact-label">Interested in</span><span class="fact-value">World models, agent learning, ML infrastructure, efficient inference</span></div>
         </div>
-
-        <div class="project-item">
-            <div class="item-header">
-                <span class="item-title">Disributed System</span>
-                <span class="item-date">January 2024 - May 2024</span>
-            </div>
-            <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
-            <ul class="bullet-points">
-                <li>Designed and implemented a distributed <strong>MapReduce</strong> framework with a Manager and Workers communicating over <strong>TCP/UDP</strong>, featuring job queuing, task scheduling, and dynamic worker registration.</li>
-                <li>Implemented a <strong>concurrency</strong> model using upgradeable reader-writer locks to synchronize threads, prevent data races, and manage job queues, worker states, and task assignments.</li>
-                <li>Optimized performance with a <strong>streaming</strong> approach for mapper and reducer input/output,,and incorporating fault tolerance via UDP <strong>heartbeat</strong> monitoring to detect Worker failures and reassign tasks seamlessly.</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <div class="item-header">
-                <span class="item-title">Web Search Engine</span>
-                <span class="item-date">January 2024 - May 2024</span>
-            </div>
-            <div class="item-subtitle">Course Project - Ann Arbor, MI</div>
-            <ul class="bullet-points">
-                <li>Developed a web search engine using <strong>Flask</strong> with a multi-stage <strong>MapReduce</strong> pipeline, Index and Search servers, and a frontend interface for ranking and displaying query results using <strong>React</strong></li>
-                <li>Built an inverted index using a MapReduce pipeline to compute <strong>tf-idf</strong> scores, segmented indices by document ID, and integrated <strong>PageRank</strong> data to enhance document ranking with user-configurable weight adjustments.</li>
-                <li>Developed a <strong>RESTful API</strong> in the Index server to retrieve query results as JSON, optimized query processing by leveraging precomputed index segments stored in memory.</li>
-                <li>Incorporated <strong>upgradeable reader-writer locks</strong> to ensure thread-safe operations in the Index and Search servers, enabling concurrent read operations and writes for in-memory updates and query result merging.</li>
-            </ul>
-        </div>
+      </div>
     </section>
+
+    <section class="section shell" id="publications" aria-labelledby="pub-title">
+      <div class="section-top">
+        <div><span class="section-kicker">Research / 03</span><h2 id="pub-title">Publications</h2></div>
+        <p class="section-intro">Selected papers. The linked project pages have full author lists, methods, and results.</p>
+      </div>
+      <div class="paper-list">
+        <article class="paper">
+          <span class="paper-year">2026</span>
+          <div><h3>Causal Chain-of-Thought Reasoning for Embodied World Model</h3><p>Ziming Xu, Shuang Liang, Ruobing Han, <strong>Ziqiao Xi</strong>, et al. · Aether AI</p><div class="paper-links"><a href="https://aetherlabsai.github.io/CausalWM/">Project ↗</a></div></div>
+        </article>
+        <article class="paper">
+          <span class="paper-year">2026</span>
+          <div><h3>Causally Debiased Latent Action Model for Embodied Action-Conditioned World Models</h3><p>Yufan Wei, Kun Zhou, Lingjun Mao, Ziming Xu, Shuang Liang, Zijun Zhang, <strong>Ziqiao Xi</strong>, et al.</p><div class="paper-links"><a href="https://arxiv.org/abs/2607.09185">arXiv ↗</a><a href="https://yufanwei.github.io/CD-LAM-project-page/">Project ↗</a></div></div>
+        </article>
+        <article class="paper">
+          <span class="paper-year">2026</span>
+          <div><h3>C-World: A Computer Use Agent Environment Creator</h3><p><strong>Ziqiao Xi</strong>, Shuang Liang, Qi Liu, Jiaqing Zhang, et al. · ACL 2026, Main Conference</p><div class="paper-links"><a href="https://aclanthology.org/2026.acl-long.2001/">ACL Anthology ↗</a><a href="https://github.com/Ziqiao-git/C-World">Code ↗</a></div></div>
+        </article>
+        <article class="paper">
+          <span class="paper-year">2024</span>
+          <div><h3>Efficient and Generalizable Nested Fourier-DeepONet for Three-Dimensional Geological Carbon Sequestration</h3><p>Jonathan E. Lee, Min Zhu, <strong>Ziqiao Xi</strong>, Kun Wang, Yanhua O. Yuan, Lu Lu</p><div class="paper-links"><a href="https://arxiv.org/abs/2409.16572">arXiv ↗</a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience" aria-labelledby="exp-title">
+      <div class="section-top"><div><span class="section-kicker">Background / 04</span><h2 id="exp-title">Experience</h2></div></div>
+      <div class="timeline">
+        <article class="timeline-item"><span class="timeline-date">2026 — Present</span><div><h3>Aether AI</h3><p class="timeline-role">Research Scientist</p><p>Research in embodied world models and agent environments, connecting algorithms with scalable training and evaluation systems.</p></div></article>
+        <article class="timeline-item"><span class="timeline-date">2025</span><div><h3>Amazon SageMaker</h3><p class="timeline-role">AI Ops Intern</p><p>Improved ML deployment infrastructure, model packaging, and production operations, shortening a stalled model update cycle from months to hours.</p></div></article>
+        <article class="timeline-item"><span class="timeline-date">2024</span><div><h3>Quantum Compliance</h3><p class="timeline-role">Full-Stack Machine Learning Engineer Intern</p><p>Built document extraction and retrieval systems for chemical safety data, combining OCR, locally hosted language models, and distributed processing.</p></div></article>
+        <article class="timeline-item"><span class="timeline-date">2022 — 2024</span><div><h3>University of Michigan School of Information</h3><p class="timeline-role">Research Assistant</p><p>Explored spiking neural networks and event-based perception, including package evaluation and data encoding for vision and audio.</p></div></article>
+      </div>
+    </section>
+
+    <section class="shell" aria-labelledby="contact-title">
+      <div class="contact">
+        <div><h2 id="contact-title">Let’s connect.</h2><p>For research, collaboration, and interesting systems problems.</p></div>
+        <a class="button" href="mailto:zixi@ucsd.edu">Email me ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>© 2026 Ziqiao Xi</span>
+    <div class="footer-links"><a href="https://github.com/Ziqiao-git">GitHub</a><a href="https://www.alphaxiv.org/@ziqiao-xi">alphaXiv</a><a href="https://www.linkedin.com/in/ziqiao-x-112551193/">LinkedIn</a></div>
+  </footer>
 </body>
 </html>
